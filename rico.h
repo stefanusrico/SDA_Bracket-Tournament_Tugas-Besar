@@ -5,6 +5,8 @@
 
 void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim);
 
+void inputSkor(Isi_Team Q, int Jml_Tim);
+
 void Create_tree(Isi_Tree X, int Jml_Node, infotype nilai, char namaArr[]);
 
 void PrintTree(Isi_Tree P, char* treeString);
