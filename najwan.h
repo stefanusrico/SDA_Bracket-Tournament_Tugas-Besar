@@ -1,6 +1,8 @@
-#ifndef head_h
-#define head_h
+#ifndef najwan_h
+#define najwan_h
+#include "head.h"
 
+int score[jml_maks+1];
 
 void tampilan();
 

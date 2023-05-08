@@ -1,4 +1,5 @@
-
+#include "head.h"
+#include "najwan.h"
 #include "rico.h"
 
 int main() {
