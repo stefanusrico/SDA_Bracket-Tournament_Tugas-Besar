@@ -1,5 +1,7 @@
-
+#include "head.h"
 #include "rico.h"
+#include "Naufal.h"
+#include "najwan.h"
 
 int main() {
 	Isi_Tree P;
