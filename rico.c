@@ -25,50 +25,6 @@ void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
 	}
 }
 
-void inputSkor(Isi_Team Q, int Jml_Tim) {
-	int i, j, k;
-	int scoreI, scoreJ;
-	char namaGrup = 'A';
-	for(k = 0; k < Jml_Tim/4; k++) {
-		system("cls");
-		printf("Grup %c\n", namaGrup + k);
-		for(i = 1 + k*4; i <= 4 + k*4; i++) {
-			for(j = i+1; j <= 4 + k*4; j++) {
-				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
-				scanf("%d-%d", &scoreI, &scoreJ);
-				if(scoreI < 0 || scoreJ < 0){
-					printf("Invalid input");
-					j--;
-					continue;	
-				}
-				if(scoreI > scoreJ) {
-					Q[i].score = Q[i].score + 3;
-				} else if(scoreJ > scoreI) {
-					Q[j].score = Q[j].score + 3;
-				} else {
-					Q[i].score = Q[i].score + 1;
-					Q[j].score = Q[j].score + 1;
-				}
-			}
-		}
-	}
-}
-
-void getPemenang(Isi_Team Q, int Jml_Tim, char timPemenang[][500]){
-	int i,k;
-	int index = 0;
-	for(k = 0; k < Jml_Tim/4; k++) {
-		printf("\nGrup %c\n", 'A' + k);
-		printf("Tim yang masuk ke babak Gugur: \n");
-		printf("--------------------\n");
-		for (i = 1 + k*4; i <= 2 + k*4; i++) {
-			printf("%s\n", Q[i].name);
-			strcpy(timPemenang[index], Q[i].name);
-			index++;
-		}
-	}
-}
-
 void Create_tree(Isi_Tree P, int Jml_Node, infotype Nilai, char namaArr[]) {
 	int i;
 	for (i = 1; i <= Jml_Node; i++) {
