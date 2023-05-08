@@ -28,7 +28,6 @@ typedef struct team{
 	int score;
 }team;
 
-int score[jml_maks+1];
 typedef Node Isi_Tree[jml_maks+1];
 typedef team Isi_Team[jml_maks+1];
 
