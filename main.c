@@ -1,5 +1,6 @@
 #include "head.h"
 #include "najwan.h"
+#include "naufal.h"
 #include "rico.h"
 
 int main() {
