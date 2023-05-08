@@ -1,6 +1,6 @@
 [Project]
-filename=ADT-Bracket Tournament-Binary Tree.dev
-name=ADT-Bracket Tournament-Binary Tree
+filename=ADT-Tournament Bracket-Binary Tree.dev
+name=ADT-Tournament Bracket-Binary Tree
 Type=0
 Ver=2
 ObjFiles=
@@ -51,36 +51,6 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=main.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit2]
-FileName=rico.c
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit3]
-FileName=rico.h
-CompileCpp=0
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit4]
 FileName=head.h
 CompileCpp=0
 Folder=
@@ -90,7 +60,17 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit5]
+[Unit2]
+FileName=main.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit3]
 FileName=najwan.c
 CompileCpp=0
 Folder=
@@ -100,7 +80,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit6]
+[Unit4]
 FileName=najwan.h
 CompileCpp=0
 Folder=
@@ -110,7 +90,7 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit7]
+[Unit5]
 FileName=Naufal.c
 CompileCpp=0
 Folder=
@@ -120,8 +100,28 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit8]
+[Unit6]
 FileName=Naufal.h
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=rico.c
+CompileCpp=0
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=rico.h
 CompileCpp=0
 Folder=
 Compile=1
