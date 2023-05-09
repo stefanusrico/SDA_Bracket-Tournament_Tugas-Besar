@@ -16,7 +16,7 @@ int main() {
 	char timPemenang[200][500];
 	char timPemenangTree[200][500];
 	tampilan();
-	while (ulang == 'y'|| ulang == 'Y') {
+	while (ulang == 'y'|| ulang == 'Y') {	
 		printf("\t\t\t\t\t\t\t          1. Buat Tim\n");
 		printf("\t\t\t\t\t\t\t         2. Create Tree\n");
 		printf("\t\t\t\t\t\t\t         3. Print Tree\n");
