@@ -1,7 +1,8 @@
 #include "rico.h"
 #include "head.h"
+#include "najwan.h"
 
-void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
+void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim, char namaTimArr[MAX_STRING_LENGTH]) {
 	int i;
 	char namaGrup = 'A';
 	int jumlahTimGrup = 4;
@@ -11,10 +12,10 @@ void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
 			printf("Grup %c\n", namaGrup);
 		}
 		printf("Masukkan nama tim %d : ", indeksTim+1);
-		char namaTimArr[MAX_STRING_LENGTH];
-		fflush(stdin);
-		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
-		strtok(namaTimArr, "\n");
+//		char namaTimArr[MAX_STRING_LENGTH];
+//		fflush(stdin);
+//		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
+//		strtok(namaTimArr, "\n"); 
 		Q[i].name = strdup(namaTimArr);
 		Q[i].score = 0;
 
@@ -210,6 +211,8 @@ void inputSkorTree4(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeStri
         	//penalti
             P[i].skor = scoreI;
             P[i+1].skor = scoreJ;
+            aduPenalti(P, i, index, timPemenangTree);
+            index++;
         }
     }
     updateParent4(P, indeksDaun, hitungDaun,timPemenangTree);
@@ -258,6 +261,7 @@ void inputSkorTree3(Isi_Tree P, char timPemenangTree[][500], int index){
             //penalti
             P[i].skor = scoreI;
             P[i+1].skor = scoreJ;
+            aduPenalti(P, i, index, timPemenangTree);
         }
     }
 //    printf("index saat ini adalah : %d", index);
@@ -284,6 +288,7 @@ void inputSkorTree2(Isi_Tree P, char timPemenangTree[][500], int index){
             //penalti
             P[i].skor = scoreI;
             P[i+1].skor = scoreJ;
+            aduPenalti(P, i, index, timPemenangTree);
         }
     }
 }
@@ -306,9 +311,10 @@ void inputSkorTree1(Isi_Tree P, char timPemenangTree[][500], int index){
             index++;
         }
         else {
-            //penalti
+            //penalti          
             P[i].skor = scoreI;
             P[i+1].skor = scoreJ;
+            aduPenalti(P, i, index, timPemenangTree);
         }
     }
 }

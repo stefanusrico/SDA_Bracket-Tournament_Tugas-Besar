@@ -10,7 +10,7 @@ void sortByScore(Isi_Team R, int Jml_Tim);
 
 void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]);
 
-void inputSkor(Isi_Team Q, int Jml_Tim);
+void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ);
 
 void aduPenalti(Isi_Tree P, int i);
 

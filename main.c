@@ -6,7 +6,8 @@
 int main() {
 	Isi_Tree P;
 	Isi_Team Q, R;
-	int pil, jmlNode, jmlTim, daun, i;
+	int pil, jmlNode, daun, i;
+	int  jmlTim = 32;
 	infotype nilai;
 	int indeksDaun[1000];
 	int hitungDaun = 0;
@@ -27,13 +28,13 @@ int main() {
 		scanf("%d", &pil);
 		switch(pil) {
 			case 1:
-				printf("Masukkan jumlah tim : ");
-				scanf("%d", &jmlTim);
-				buatArrayKualifikasi(Q, jmlTim);
+//				printf("Masukkan jumlah tim : ");
+//				scanf("%d", &jmlTim);
+				buatArrayKualifikasi(Q, jmlTim, "babik");
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
-				inputSkor(Q,jmlTim);
+				inputSkor(Q,jmlTim, 5, 2);
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}

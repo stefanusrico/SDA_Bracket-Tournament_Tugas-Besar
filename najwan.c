@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "najwan.h"
+#include "naufal.h"
 #include "head.h"
 
 
@@ -83,26 +84,27 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 		}
 
 		if( x != 1) {
-			getPemenang(Q,Jml_Tim,timPemenang);
+			getPemenang(Q, Jml_Tim, timPemenang);
 		}
 	}
 
 
-void inputSkor(Isi_Team Q, int Jml_Tim) {
+void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 	int i, j, k;
-	int scoreI, scoreJ;
+//	int scoreI, scoreJ;
 	char namaGrup = 'A';
 	for(k = 0; k < Jml_Tim/4; k++) {
 		system("cls");
 		printf("Grup %c\n", namaGrup + k);
 		for(i = 1 + k*4; i <= 4 + k*4; i++) {
 			for(j = i+1; j <= 4 + k*4; j++) {
-				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
-				scanf("%d-%d", &scoreI, &scoreJ);
-
-				score[i] = scoreI + score[i];
-				score[j] = scoreJ + score[j];
-
+//				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
+//				scanf("%d-%d", &scoreI, &scoreJ);
+				if(scoreI < 0 || scoreJ < 0){
+					printf("Invalid input");
+					j--;
+					continue;	
+				}
 				if(scoreI > scoreJ) {
 					Q[i].score = Q[i].score + 3;
 				} else if(scoreJ > scoreI) {

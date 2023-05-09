@@ -3,7 +3,7 @@
 
 #include "head.h"
 
-void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim);
+void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim, char namaTimArr[100]);
 
 void Create_tree(Isi_Tree X, int Jml_Node, infotype nilai, char namaArr[]);
 
