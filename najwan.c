@@ -21,19 +21,21 @@ void tampilan() {
 	printf("\t\t\t\t                    |_______|  '.____.'  |_____| `.______.'  \n\n\n");
 }
 
+
+//modul ini bertujuan untuk menentukan score yang paling besar itu di paling atas
 void swapScore(Isi_Team R, int Jml_Tim) {
 	int i,j,k;
 	int temp;
 	team temp2;
-	for(k = 0; k < Jml_Tim/4; k++) {
-		for(i = 1 + k*4; i <= 4 + k*4; i++) {
-			for(j = i+1; j <= 4 + k*4; j++) {
-				if(score[i] < score[j]) {
-					temp = score[i];
-					score[i] = score[j];
-					score[j] = temp;
+	for(k = 0; k < Jml_Tim/4; k++) { //perulangan dengan syarat berikut bertujuan untuk membagi setiap grup terdiri dari 4 tim
+		for(i = 1 + k*4; i <= 4 + k*4; i++) { //variabel i pada perulangan berikut berguna untuk menjadi indeks pertama yang akan dibandingkan. nilai awal k adalah 0, jadi batasan pertamanya adalah 4
+			for(j = i+1; j <= 4 + k*4; j++) { //variabel j pada perulangan berikut berguna untuk menjadi indeks kedua yang akan dibandingkan dengan indeks pertama. 
+				if(score[i] < score[j]) { //jika indeks variabel i lebih kecil dari indeks variabel j, maka akan melakukan swap/penukaran
+					temp = score[i];      //melakukan penukaran posisi score. score pertama (i) akan disimpan sementara pada temp
+					score[i] = score[j];  //score kedua (j) ditempatkan ke posisi pertama
+					score[j] = temp;	  //score pertama (i) yang tadi disimpan di temp, kemudian di pindahkan di posisi kedua
 
-					temp2.name = R[i].name;
+					temp2.name = R[i].name; //melakukan penukaran posisi nama tim, untuk mekanisme penukaran sama dengan penukaran score
 					R[i].name = R[j].name;
 					R[j].name = temp2.name;
 				}
@@ -43,14 +45,14 @@ void swapScore(Isi_Team R, int Jml_Tim) {
 }
 
 void sortByScore(Isi_Team R, int Jml_Tim) {
-	int i,k;
-	for( k=0; k<Jml_Tim/4; k++) {
-		printf("\nGrup %c\n", 'A' + k);
+	int i,x;                      //variabel x berguna untuk menjadi batasan agar 1 grup terdiri dari 4 tim
+	for( x=0; x<Jml_Tim/4; x++) { //dilakukan perulangan dengan batasan x<jumlah tim dibagi 4, agar terbentuk grup yang masing-masing nya terdiri dari 4 tim saja
+		printf("\nGrup %c\n", 'A' + x); //grup dimulai dari A, kemudian untuk selanjutnya akan ditambah dengan indeks x, sehingga selanjutnya menjadi B, C, dan seterusnya
 		printf("\nHasil akhir babak penyisihan:\n");
 		printf("Tim\t\tScore\n");
 		printf("--------------------\n");
-		for(i=1; i<=Jml_Tim; i++) {
-			printf("%s\t\t%d\n", R[i].name, score[i]);
+		for(i=1 + x*4; i<=4 + x*4; i++) { //melakukan perulangan dengan syarat berikut, agar ketika di print ke layar, hanya 4 tim per grup yang ditampilkan, dengan indeks 1-4 = grup A, 5-8 Grup B,dan seterusnya.karena x pertamanya adalah 0, maka batasan pertama adalah 4, dst.
+			printf("%s\t\t%d\n", R[i].name, score[i]); //melakukan print ke layar berdasarkan indeks yang telah melakukan swap di modul swapScore
 		}
 	}
 }
@@ -113,6 +115,26 @@ void inputSkor(Isi_Team Q, int Jml_Tim) {
 		}
 	}
 }
+
+void aduPenalti(Isi_Tree P, int i){
+	int scoreI,scoreJ;
+	printf("\n ADU PENALTI ANTARA %s DAN %s", P[i].nama, P[i+1].nama);
+	for(int kicker=1; kicker<=5; kicker++){
+		printf("Tendangan ke : %d\n",kicker);
+		printf("%s : ",P[i].nama);
+		scanf("%d",&scoreI);
+		printf("%s : ",P[i+1].nama);
+		scanf("%d",&scoreJ);
+		
+		scorePenalti[i] = scoreI +  scorePenalti[i];
+		scorePenalti[i+1] = scoreJ +  scorePenalti[i+1];	
+	}
+	
+	if(scorePenalti[i] == scorePenalti[i+1]){
+		aduPenalti(P, i);
+	}
+}
+
 
 
 

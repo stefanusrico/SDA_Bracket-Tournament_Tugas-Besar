@@ -32,4 +32,5 @@ typedef Node Isi_Tree[jml_maks+1];
 typedef team Isi_Team[jml_maks+1];
 
 int score[jml_maks+1];
+int scorePenalti[jml_maks+1];
 #endif
