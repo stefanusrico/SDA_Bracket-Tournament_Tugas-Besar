@@ -5,7 +5,7 @@
 
 int main() {
 	Isi_Tree P;
-	Isi_Team Q;
+	Isi_Team Q, R;
 	int pil, jmlNode, jmlTim, daun, i;
 	infotype nilai;
 	int indeksDaun[1000];
@@ -15,14 +15,15 @@ int main() {
 	char treeString[MAX_STRING_LENGTH];
 	char timPemenang[200][500];
 	char timPemenangTree[200][500];
+	tampilan();
 	while (ulang == 'y'|| ulang == 'Y') {
-		printf("1. Buat Tim\n");
-		printf("2. Create Tree\n");
-		printf("3. Print Tree\n");
-		printf("4. Assign\n");
-		printf("5. Update Tree\n");
-		printf("6. Indeks daun\n");
-		printf("Masukkan pilihan anda : ");
+		printf("\t\t\t\t\t\t\t          1. Buat Tim\n");
+		printf("\t\t\t\t\t\t\t         2. Create Tree\n");
+		printf("\t\t\t\t\t\t\t         3. Print Tree\n");
+		printf("\t\t\t\t\t\t\t           4. Assign\n");
+		printf("\t\t\t\t\t\t\t         5. Update Tree\n");
+		printf("\t\t\t\t\t\t\t         6. Indeks daun\n\n");
+		printf("\t\t\t\t\t\t\t      Masukkan pilihan anda : ");
 		scanf("%d", &pil);
 		switch(pil) {
 			case 1:
@@ -33,10 +34,15 @@ int main() {
 				system("pause");
 				system("cls");
 				inputSkor(Q,jmlTim);
+				for(int i = 1; i <= jmlTim; i++){
+					R[i] = Q[i];	
+				}
+				
+				swapScore(R,jmlTim);
+				sortByScore(R,jmlTim);
 				swapHasil(Q,jmlTim);
 				sortHasil(Q,jmlTim);
-//				ulangPertandingan(Q, jmlTim);
-				getPemenang(Q,jmlTim, timPemenang);
+				cekPemenang(Q, jmlTim, R, timPemenang);
 				break;
 				
 			case 2:
