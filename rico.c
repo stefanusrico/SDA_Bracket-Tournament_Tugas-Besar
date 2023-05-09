@@ -195,21 +195,21 @@ void inputSkorTree4(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeStri
         printf("\nMasukkan skor %s vs %s : ", P[i].nama, P[i+1].nama);
         scanf("%d-%d", &scoreI, &scoreJ);
         if(scoreI > scoreJ) { 
-            P[i].skor += 3;
-            P[i+1].skor += 0;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
 			strcpy(timPemenangTree[index], P[i].nama);
 			index++;
         }
         else if(scoreI < scoreJ) { 
-            P[i].skor += 0;
-            P[i+1].skor += 3;
-			strcpy(timPemenangTree[index], P[i].nama);
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
+			strcpy(timPemenangTree[index], P[i+1].nama);
 			index++;
         }
         else {
         	//penalti
-            P[i].skor += 1;
-            P[i+1].skor += 1;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
         }
     }
     updateParent4(P, indeksDaun, hitungDaun,timPemenangTree);
@@ -243,21 +243,21 @@ void inputSkorTree3(Isi_Tree P, char timPemenangTree[][500], int index){
         printf("\nMasukkan skor %s vs %s : ", P[i].nama, P[i+1].nama);
         scanf("%d-%d", &scoreI, &scoreJ);
         if(scoreI > scoreJ) { 
-            P[i].skor += 3;
-            P[i+1].skor += 0;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
             strcpy(timPemenangTree[index], P[i].nama);
             index++;
         }
         else if(scoreI < scoreJ) { 
-            P[i].skor += 0;
-            P[i+1].skor += 3;
-            strcpy(timPemenangTree[index], P[i].nama);
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
+            strcpy(timPemenangTree[index], P[i+1].nama);
             index++;
         }
         else {
             //penalti
-            P[i].skor += 1;
-            P[i+1].skor += 1;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
         }
     }
 //    printf("index saat ini adalah : %d", index);
@@ -269,21 +269,21 @@ void inputSkorTree2(Isi_Tree P, char timPemenangTree[][500], int index){
         printf("\nMasukkan skor %s vs %s : ", P[i].nama, P[i+1].nama);
         scanf("%d-%d", &scoreI, &scoreJ);
         if(scoreI > scoreJ) { 
-            P[i].skor += 3;
-            P[i+1].skor += 0;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
             strcpy(timPemenangTree[index], P[i].nama);
             index++;
         }
         else if(scoreI < scoreJ) { 
-            P[i].skor += 0;
-            P[i+1].skor += 3;
-            strcpy(timPemenangTree[index], P[i].nama);
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
+            strcpy(timPemenangTree[index], P[i+1].nama);
             index++;
         }
         else {
             //penalti
-            P[i].skor += 1;
-            P[i+1].skor += 1;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
         }
     }
 }
@@ -294,21 +294,21 @@ void inputSkorTree1(Isi_Tree P, char timPemenangTree[][500], int index){
         printf("\nMasukkan skor %s vs %s : ", P[i].nama, P[i+1].nama);
         scanf("%d-%d", &scoreI, &scoreJ);
         if(scoreI > scoreJ) { 
-            P[i].skor += 3;
-            P[i+1].skor += 0;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
             strcpy(timPemenangTree[index], P[i].nama);
             index++;
         }
         else if(scoreI < scoreJ) { 
-            P[i].skor += 0;
-            P[i+1].skor += 3;
-            strcpy(timPemenangTree[index], P[i].nama);
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
+            strcpy(timPemenangTree[index], P[i+1].nama);
             index++;
         }
         else {
             //penalti
-            P[i].skor += 1;
-            P[i+1].skor += 1;
+            P[i].skor = scoreI;
+            P[i+1].skor = scoreJ;
         }
     }
 }
