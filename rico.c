@@ -14,6 +14,7 @@ void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
 		char namaTimArr[MAX_STRING_LENGTH];
 		fflush(stdin);
 		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
+		strtok(namaTimArr, "\n");
 		Q[i].name = strdup(namaTimArr);
 		Q[i].score = 0;
 
