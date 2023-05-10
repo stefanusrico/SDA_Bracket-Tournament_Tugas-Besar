@@ -117,6 +117,7 @@ void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 					Q[i].score = Q[i].score + 1;
 					Q[j].score = Q[j].score + 1;
 				}
+				
 			}
 		}
 	}
