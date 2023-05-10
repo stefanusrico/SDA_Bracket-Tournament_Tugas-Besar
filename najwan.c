@@ -127,14 +127,23 @@ void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]){
 	int scoreI,scoreJ;
 	printf("\n ADU PENALTI ANTARA %s DAN %s", P[i].nama, P[i+1].nama);
 	for(int kicker=1; kicker<=5; kicker++){
-		printf("Tendangan ke : %d\n",kicker);
-		printf("%s : ",P[i].nama);
-		scanf("%d",&scoreI);
-		printf("%s : ",P[i+1].nama);
-		scanf("%d",&scoreJ);
-		
-		scorePenalti[i] = scoreI +  scorePenalti[i];
-		scorePenalti[i+1] = scoreJ +  scorePenalti[i+1];	
+		printf("Tendangan ke: %d\n", kicker);
+		do {
+			printf("%s: ", P[i].nama);
+			scanf("%d", &scoreI);
+			printf("%s: ", P[i+1].nama);
+			scanf("%d", &scoreJ);
+			
+			if ((scoreI != 0 && scoreI != 1) || (scoreJ != 0 && scoreJ != 1)){
+				printf("Invalid input! Scores should be either 0 or 1.\n");
+			}
+			else {
+				break;
+			}
+		} while (1);
+
+		scorePenalti[i] += scoreI;
+		scorePenalti[i+1] += scoreJ;
 	}
 	
 	if(scorePenalti[i] == scorePenalti[i+1]){
