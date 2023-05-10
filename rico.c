@@ -129,17 +129,6 @@ void assignDaunTree(Isi_Tree P, int* indeksDaun, int *hitungDaun, char timPemena
 	}
 }
 
-void tampilPemenangTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]){
-	int i;
-	int index = 0;
-	int posisi = indeksDaun[0];
-	for(i = posisi; i <= *hitungDaun*2-2; i+=2){
-		printf("%s1\n", P[i].nama);
-		printf("Pemenang single : %s\n", timPemenangTree[index]);
-		index++;
-	}
-}
-
 void updateParent(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]){
 	int i;
 	int index = 0;
@@ -156,7 +145,7 @@ void updateParent(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenang
 }
 
 void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500]) {
-    int i, j, k, indeks;
+    int i, j, k;
     int posisi;
     int scoreI, scoreJ;
     int index = 0;

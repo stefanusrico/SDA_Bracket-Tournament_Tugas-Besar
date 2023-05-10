@@ -15,8 +15,6 @@ void cariDaun(Isi_Tree P, int posisi, int* indeksDaun, int* hitungDaun);
 
 void assignDaunTree(Isi_Tree P, int* indeksDaun, int *hitungDaun, char timPemenang[][500]);
 
-void tampilPemenangTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]);
-
 void updateParent(Isi_Tree P, int* indeksDaun, int* hitungDaun,char timPemenangTree[][500]);
 
 void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500]);
