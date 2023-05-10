@@ -2,7 +2,7 @@
 #include "head.h"
 #include "najwan.h"
 
-void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim, char namaTimArr[MAX_STRING_LENGTH]) {
+void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
 	int i;
 	char namaGrup = 'A';
 	int jumlahTimGrup = 4;
@@ -12,10 +12,10 @@ void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim, char namaTimArr[MAX_STRING_LE
 			printf("Grup %c\n", namaGrup);
 		}
 		printf("Masukkan nama tim %d : ", indeksTim+1);
-//		char namaTimArr[MAX_STRING_LENGTH];
-//		fflush(stdin);
-//		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
-//		strtok(namaTimArr, "\n"); 
+		char namaTimArr[MAX_STRING_LENGTH];
+		fflush(stdin);
+		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
+		strtok(namaTimArr, "\n"); 
 		Q[i].name = strdup(namaTimArr);
 		Q[i].score = 0;
 
@@ -129,9 +129,8 @@ void assignDaunTree(Isi_Tree P, int* indeksDaun, int *hitungDaun, char timPemena
 	}
 }
 
-void updateParent(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]){
+void updateParent(Isi_Tree P, int index, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]){
 	int i;
-	int index = 0;
 	int posisi = indeksDaun[0];
 	if(posisi < 2){
 //		main();
@@ -176,7 +175,9 @@ void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeStrin
             
         }
     }
-    updateParent(P,indeksDaun, hitungDaun,timPemenangTree);
+    printf("\nindeks : %d\n",index);
+    index = index - index;
+    updateParent(P, index, indeksDaun, hitungDaun,timPemenangTree);
 	PrintTree(P, treeString);
 	system("pause");
     system("cls");
