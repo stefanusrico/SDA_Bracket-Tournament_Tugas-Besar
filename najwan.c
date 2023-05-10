@@ -70,7 +70,7 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 		for (i = 1 + l*4; i <= 4 + l*4; i++) {
 			for(j = i+1; j <= 4 + l*4; j++) {
 				for(k = j+1; k <= 4 + l*4; k++) {
-					if(Q[i].score == Q[j].score && Q[i].score == Q[k].score && Q[j].score == Q[k].score) {
+					if(Q[i].score == Q[j].score == Q[k].score && Q[i].score == Q[k].score != Q[j].score || Q[i].score != Q[k].score == Q[j].score) {
 							for (i = 1 + l*4; i <= 2 + l*4; i++) {
 								printf("%s\n", R[i].name);
 								strcpy(timPemenang[index], R[i].name);
@@ -123,7 +123,7 @@ void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 	}
 }
 
-void aduPenalti(Isi_Tree P, int i){
+void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]){
 	int scoreI,scoreJ;
 	printf("\n ADU PENALTI ANTARA %s DAN %s", P[i].nama, P[i+1].nama);
 	for(int kicker=1; kicker<=5; kicker++){
@@ -138,7 +138,11 @@ void aduPenalti(Isi_Tree P, int i){
 	}
 	
 	if(scorePenalti[i] == scorePenalti[i+1]){
-		aduPenalti(P, i);
+		aduPenalti(P, i, index, timPemenangTree);
+	}else if(scorePenalti[i] < scorePenalti[i+1]){
+		strcpy(timPemenangTree[index], P[i+1].nama);
+	}else if(scorePenalti[i] > scorePenalti[i+1]){
+		strcpy(timPemenangTree[index], P[i].nama);
 	}
 }
 
