@@ -31,11 +31,11 @@ int main() {
 			case 1:
 //				printf("Masukkan jumlah tim : ");
 //				scanf("%d", &jmlTim);
-				buatArrayKualifikasi(Q, jmlTim, "babik");
+				buatArrayKualifikasi(Q, jmlTim);
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
-				inputSkor(Q,jmlTim, 3, 3);
+				inputSkor(Q,jmlTim);
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}
