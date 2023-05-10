@@ -70,7 +70,7 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 		for (i = 1 + l*4; i <= 4 + l*4; i++) {
 			for(j = i+1; j <= 4 + l*4; j++) {
 				for(k = j+1; k <= 4 + l*4; k++) {
-					if(Q[i].score == Q[j].score == Q[k].score && Q[i].score == Q[k].score != Q[j].score || Q[i].score != Q[k].score == Q[j].score) {
+					if(Q[i].score == Q[j].score == Q[k].score && Q[i].score == Q[k].score != Q[j].score || Q[i].score != Q[k].score == Q[j].score) {
 							for (i = 1 + l*4; i <= 2 + l*4; i++) {
 								printf("%s\n", R[i].name);
 								strcpy(timPemenang[index], R[i].name);
