@@ -71,6 +71,7 @@ int main() {
 				hitungDaun = 0;
 				cariDaun(P,1,indeksDaun, &hitungDaun);
 				inputSkorTree(P, indeksDaun, &hitungDaun, treeString,timPemenangTree);
+				
 //				tampilPemenangTree(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				updateParent(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				printf("Root tree: %s", P[0].nama);

@@ -184,6 +184,7 @@ void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeStrin
             P[i+1].skor = scoreJ;
             aduPenalti(P, i, index, timPemenangTree);
             index++;
+            
         }
     }
     updateParent(P,indeksDaun, hitungDaun,timPemenangTree);
