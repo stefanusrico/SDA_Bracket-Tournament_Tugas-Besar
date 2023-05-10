@@ -100,6 +100,10 @@ void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 			for(j = i+1; j <= 4 + k*4; j++) {
 //				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
 //				scanf("%d-%d", &scoreI, &scoreJ);
+
+				score[i] = scoreI + score[i];
+				score[j] = scoreJ + score[j];
+				
 				if(scoreI < 0 || scoreJ < 0){
 					printf("Invalid input");
 					j--;
