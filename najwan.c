@@ -135,7 +135,7 @@ void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]){
 			scanf("%d", &scoreJ);
 			
 			if ((scoreI != 0 && scoreI != 1) || (scoreJ != 0 && scoreJ != 1)){
-				printf("Invalid input! Scores should be either 0 or 1.\n");
+				printf("Invalid input! skor harus 0 atau 1.\n");
 			}
 			else {
 				break;
