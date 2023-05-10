@@ -6,7 +6,8 @@
 int main() {
 	Isi_Tree P;
 	Isi_Team Q, R;
-	int pil, jmlNode, daun, i;
+	int pil, daun, i;
+	int jmlNode = 31;
 	int  jmlTim = 32;
 	infotype nilai;
 	int indeksDaun[1000];
@@ -47,8 +48,8 @@ int main() {
 				break;
 				
 			case 2:
-				printf("Masukkan jumlah node : ");
-				scanf("%d", &jmlNode);
+//				printf("Masukkan jumlah node : ");
+//				scanf("%d", &jmlNode);
 				Create_tree(P,jmlNode,nilai, "?");
 				break;
 

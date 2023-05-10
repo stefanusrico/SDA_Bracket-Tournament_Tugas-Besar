@@ -34,7 +34,7 @@ void sortHasil(Isi_Team Q, int Jml_Tim) {
 	for(k = 0; k < Jml_Tim/4; k++) {
 		printf("\nGrup %c\n", 'A' + k);
 		printf("\nHasil akhir babak penyisihan:\n");
-		printf("Tim\t\tSkor\n");
+		printf("Tim\t\tPoin\n");
 		printf("--------------------\n");
 		for (i = 1 + k*4; i <= 4 + k*4; i++) {
 			printf("%s\t\t%d\n", Q[i].name, Q[i].score);	
