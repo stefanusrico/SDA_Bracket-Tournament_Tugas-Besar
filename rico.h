@@ -17,20 +17,8 @@ void assignDaunTree(Isi_Tree P, int* indeksDaun, int *hitungDaun, char timPemena
 
 void tampilPemenangTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char timPemenangTree[][500]);
 
-void updateParent4(Isi_Tree P, int* indeksDaun, int* hitungDaun,char timPemenangTree[][500]);
+void updateParent(Isi_Tree P, int* indeksDaun, int* hitungDaun,char timPemenangTree[][500]);
 
-void updateParent3(Isi_Tree P, int index, char timPemenangTree[][500]);
-
-void updateParent2(Isi_Tree P, int index, char timPemenangTree[][500]);
-
-void updateParent1(Isi_Tree P, int index, char timPemenangTree[][500]);
-
-void inputSkorTree4(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500]);
-
-void inputSkorTree3(Isi_Tree P, char timPemenangTree[][500], int index);
-
-void inputSkorTree2(Isi_Tree P, char timPemenangTree[][500], int index);
-
-void inputSkorTree1(Isi_Tree P, char timPemenangTree[][500], int index);
+void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500]);
 
 #endif

@@ -70,7 +70,7 @@ int main() {
 			case 5:
 				hitungDaun = 0;
 				cariDaun(P,1,indeksDaun, &hitungDaun);
-				inputSkorTree4(P, indeksDaun, &hitungDaun, treeString,timPemenangTree);
+				inputSkorTree(P, indeksDaun, &hitungDaun, treeString,timPemenangTree);
 //				tampilPemenangTree(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				updateParent(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				printf("Root tree: %s", P[0].nama);
