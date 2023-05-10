@@ -12,6 +12,6 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]);
 
 void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ);
 
-void aduPenalti(Isi_Tree P, int i);
+void aduPenalti(Isi_Tree P,int i,int index,char timPemenangTree);
 
 #endif

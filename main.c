@@ -34,7 +34,7 @@ int main() {
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
-				inputSkor(Q,jmlTim, 5, 2);
+				inputSkor(Q,jmlTim, 3, 3);
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}

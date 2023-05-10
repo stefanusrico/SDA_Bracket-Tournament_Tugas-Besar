@@ -61,7 +61,6 @@ void sortByScore(Isi_Team R, int Jml_Tim) {
 void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 	int i, j, k, l;
 	int x = 0, grup;
-	char ulang;
 	int index = 0;
 	for(l = 0; l < Jml_Tim/4; l++) {
 		printf("\nGrup %c\n", 'A' + l);
@@ -70,7 +69,7 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 		for (i = 1 + l*4; i <= 4 + l*4; i++) {
 			for(j = i+1; j <= 4 + l*4; j++) {
 				for(k = j+1; k <= 4 + l*4; k++) {
-					if(Q[i].score == Q[j].score && Q[i].score == Q[k].score && Q[j].score == Q[k].score) {
+					if(Q[i].score == Q[j].score == Q[k].score && Q[i].score == Q[k].score != Q[j].score || Q[i].score != Q[k].score == Q[j].score) {
 							for (i = 1 + l*4; i <= 2 + l*4; i++) {
 								printf("%s\n", R[i].name);
 								strcpy(timPemenang[index], R[i].name);
@@ -81,11 +80,13 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 					}
 				}
 			}
+			if( x != 1) {
+				getPemenang(Q, Jml_Tim, timPemenang);
+			}
 		}
+		
 
-		if( x != 1) {
-			getPemenang(Q, Jml_Tim, timPemenang);
-		}
+
 	}
 
 
@@ -100,6 +101,9 @@ void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 			for(j = i+1; j <= 4 + k*4; j++) {
 //				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
 //				scanf("%d-%d", &scoreI, &scoreJ);
+
+				score[i] = scoreI + score[i];
+				score[j] = scoreJ + score[j];
 				if(scoreI < 0 || scoreJ < 0){
 					printf("Invalid input");
 					j--;
@@ -118,9 +122,10 @@ void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
 	}
 }
 
-void aduPenalti(Isi_Tree P, int i){
+void aduPenalti(Isi_Tree P,int i,int index,char timPemenangTree){
 	int scoreI,scoreJ;
-	printf("\n ADU PENALTI ANTARA %s DAN %s", P[i].nama, P[i+1].nama);
+	printf("Aturan Main : \n1. jika gol, maka 1\njika tidak gol, maka 0.\n");
+	printf("\n ADU PENALTI ANTARA %s DAN %s\n", P[i].nama, P[i+1].nama);
 	for(int kicker=1; kicker<=5; kicker++){
 		printf("Tendangan ke : %d\n",kicker);
 		printf("%s : ",P[i].nama);
@@ -133,9 +138,15 @@ void aduPenalti(Isi_Tree P, int i){
 	}
 	
 	if(scorePenalti[i] == scorePenalti[i+1]){
-		aduPenalti(P, i);
+		aduPenalti(P, i, index, timPemenangTree);
+	}else if (scorePenalti[i] < scorePenalti[i+1]){
+		printf("pemenang : %s", P[i+1].nama);
+	}else if (scorePenalti[i] > scorePenalti[i+1]){
+		printf("pemenang : %s", P[i].nama);
 	}
 }
+
+//void perbandingan
 
 
 
