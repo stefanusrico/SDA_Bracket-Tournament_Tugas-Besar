@@ -3,7 +3,8 @@
 #include "Naufal.h"
 #include "najwan.h"
 
-int main() {
+void mainmenu(){
+	tampilan();
 	Isi_Tree P;
 	Isi_Team Q, R;
 	int pil, daun, i;
@@ -14,10 +15,10 @@ int main() {
 	int hitungDaun = 0;
 	int index = 0;
 	char ulang = 'y';
-	char treeString[MAX_STRING_LENGTH];
+	char treeString[MAX_STRING_LENGTH] = "";
+	char namaTimArr[MAX_STRING_LENGTH];
 	char timPemenang[200][500];
 	char timPemenangTree[200][500];
-	tampilan();
 	while (ulang == 'y'|| ulang == 'Y') {	
 		printf("\t\t\t\t\t\t\t          1. Buat Tim\n");
 		printf("\t\t\t\t\t\t\t         2. Create Tree\n");
@@ -31,7 +32,7 @@ int main() {
 			case 1:
 //				printf("Masukkan jumlah tim : ");
 //				scanf("%d", &jmlTim);
-				buatArrayKualifikasi(Q, jmlTim);
+				buatArrayKualifikasi(P,Q,R, namaTimArr, treeString, jmlTim);
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
@@ -54,7 +55,8 @@ int main() {
 				break;
 
 			case 3:
-				PrintTree(P, treeString);
+				PrintTree(P, Q, R, jmlNode, treeString, namaTimArr);
+//				saveData(P, Q, R, treeString, jmlNode);
 				break;
 
 			case 4:
@@ -71,7 +73,7 @@ int main() {
 			case 5:
 				hitungDaun = 0;
 				cariDaun(P,1,indeksDaun, &hitungDaun);
-				inputSkorTree(P, indeksDaun, &hitungDaun, treeString,timPemenangTree);
+				inputSkorTree(P, Q, R, indeksDaun, &hitungDaun, treeString,timPemenangTree, namaTimArr);
 				
 //				tampilPemenangTree(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				updateParent(P, indeksDaun, &hitungDaun,timPemenangTree);
@@ -94,7 +96,24 @@ int main() {
 		printf("\nKembali ke menu? Y/N");
 		ulang = getche();
 		system("cls");
-
 	}
+}
+
+int main(){
+	Isi_Tree P;
+	Isi_Team Q, R;
+	int pil, daun, i;
+	int jmlNode = 31;
+	int  jmlTim = 32;
+	infotype nilai;
+	int indeksDaun[1000];
+	int hitungDaun = 0;
+	int index = 0;
+	char ulang = 'y';
+	char treeString[MAX_STRING_LENGTH];
+	char timPemenang[200][500];
+	char timPemenangTree[200][500];
+	mainmenu();
 	return 0;
 }
+

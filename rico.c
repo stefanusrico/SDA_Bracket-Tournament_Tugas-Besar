@@ -2,20 +2,21 @@
 #include "head.h"
 #include "najwan.h"
 
-void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
+void buatArrayKualifikasi(Isi_Tree P, Isi_Team Q, Isi_Team R, char namaTimArr[MAX_STRING_LENGTH], char* treeString, int Jml_Tim) {
 	int i;
 	char namaGrup = 'A';
 	int jumlahTimGrup = 4;
 	int indeksTim = 0;
+//	char namaTimArr[MAX_STRING_LENGTH];
 	for(i = 1; i <= Jml_Tim; i++) {
 		if(indeksTim == 0) {
 			printf("Grup %c\n", namaGrup);
 		}
-		printf("Masukkan nama tim %d : ", indeksTim+1);
-		char namaTimArr[MAX_STRING_LENGTH];
+		printf("Masukkan nama tim %d : ", indeksTim+1);		
+//		char namaTimArr[MAX_STRING_LENGTH];
 		fflush(stdin);
 		fgets(namaTimArr, MAX_STRING_LENGTH, stdin);
-		strtok(namaTimArr, "\n"); 
+		strtok(namaTimArr, "\n");
 		Q[i].name = strdup(namaTimArr);
 		Q[i].score = 0;
 
@@ -25,6 +26,7 @@ void buatArrayKualifikasi(Isi_Team Q, int Jml_Tim) {
 			namaGrup++;
 		}
 	}
+	saveData(P, Q, R, treeString, namaTimArr, 31, 1);
 }
 
 void Create_tree(Isi_Tree P, int Jml_Node, infotype Nilai, char namaArr[]) {
@@ -100,11 +102,12 @@ void printTree(Isi_Tree P, int posisi, int level, char* treeString) {
 	}
 }
 
-void PrintTree(Isi_Tree P, char* treeString) {
+void PrintTree(Isi_Tree P, Isi_Team Q, Isi_Team R, int Jml_Node, char* treeString, char namaTimArr[]) {
 	strcpy(treeString, "");
 	printTree(P, 1, 0, treeString);
-	printf("\nTree:\n");
+	printf("\nTree:\n");	
 	printf("%s", treeString);
+	saveData(P, Q, R, treeString, namaTimArr, 31, 2);
 }
 
 void cariDaun(Isi_Tree P, int posisi, int* indeksDaun, int* hitungDaun) {
@@ -133,17 +136,17 @@ void updateParent(Isi_Tree P, int index, int* indeksDaun, int* hitungDaun, char 
 	int i;
 	int posisi = indeksDaun[0];
 	if(posisi < 2){
-//		main();
+		system("cls");
+		mainmenu();
 	}
 	for(i = posisi; i <= posisi*2-2; i+=2){
-//		printf("%s1\n", P[i].nama);
 		strcpy(P[(i-1)/2+1].nama, timPemenangTree[index]);
 		index++;
 	}
-//	posisi = posisi/2;
+	
 }
 
-void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500]) {
+void inputSkorTree(Isi_Tree P, Isi_Team Q, Isi_Team R, int* indeksDaun, int* hitungDaun, char* treeString, char timPemenangTree[][500], char namaTimArr[]) {
     int i, j, k;
     int posisi;
     int scoreI, scoreJ;
@@ -178,10 +181,51 @@ void inputSkorTree(Isi_Tree P, int* indeksDaun, int* hitungDaun, char* treeStrin
     printf("\nindeks : %d\n",index);
     index = index - index;
     updateParent(P, index, indeksDaun, hitungDaun,timPemenangTree);
-	PrintTree(P, treeString);
+	PrintTree(P, Q, R, 31, namaTimArr, treeString);
 	system("pause");
     system("cls");
     posisi = posisi/2;
     indeksDaun[0] = posisi;
+  }
+}
+
+void saveData(Isi_Tree P, Isi_Team Q, Isi_Team R, char* treeString, char namaTimArr[], int Jml_Node, int i) {
+	int j = 1;
+	int k;
+	int Jml_Tim = 32;
+    FILE *file1 = fopen(FILE_NAME1, "wb");
+    FILE *file2 = fopen(FILE_NAME2, "wb");
+    if (file1 != NULL && i == 1) {
+//        fwrite(&P, sizeof(Node), 1, file);
+//        fwrite(&Q, sizeof(team), 1, file);
+//        fwrite(&R, sizeof(int), 1, file);
+		for(k = 0; k < Jml_Tim/4; k++) {
+			for(j = 1+k*4; j <= 4+k*4; j++){
+				fwrite(Q[j].name, sizeof(char), strlen(Q[j].name)+1, file1);
+				fwrite("\n", sizeof(char), 1, file1);
+			}
+			fwrite("\n", sizeof(char), 1, file1);
+		}
+        fclose(file1);
+        printf("Data saved successfully.\n");
+    } else if (file2 != NULL && i == 2){
+    	fwrite(treeString, sizeof(treeString), strlen(treeString)+1, file2);
+        fclose(file2);
+        printf("Data saved successfully.\n");
+    }else{
+    	printf("Error saving data.\n");
 	}
+}	
+
+void loadData(Isi_Tree *P, Isi_Team *Q, Isi_Team *R) {
+    FILE *file = fopen(FILE_NAME2, "rb");
+    if (file != NULL) {
+        fread(P, sizeof(Isi_Tree), 1, file);
+        fread(Q, sizeof(Isi_Team), 1, file);
+        fread(R, sizeof(Isi_Team), 1, file);
+        fclose(file);
+        printf("Data loaded successfully.\n");
+    } else {
+        printf("Error loading data.\n");
+    }
 }

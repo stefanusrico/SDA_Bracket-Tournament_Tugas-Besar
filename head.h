@@ -13,6 +13,9 @@
 #define MAX_STRING_LENGTH 100
 #define MAX_ELM 100
 
+#define FILE_NAME1 "Babak Kualifikasi (Array).txt"
+#define FILE_NAME2 "Babak Gugur (Tree).txt"
+
 typedef char* infotype;
 typedef int address;
 
