@@ -4,6 +4,10 @@
 #include "najwan.h"
 
 void mainmenu(){
+	int tahun;
+	printf("Input tournament tahun : ");
+	scanf("%d", &tahun);
+	system("cls");
 	tampilan();
 	Isi_Tree P;
 	Isi_Team Q, R;
@@ -32,11 +36,11 @@ void mainmenu(){
 			case 1:
 //				printf("Masukkan jumlah tim : ");
 //				scanf("%d", &jmlTim);
-				buatArrayKualifikasi(P,Q,R, namaTimArr, treeString, jmlTim);
+				buatArrayKualifikasi(P,Q,R, namaTimArr, treeString, jmlTim, tahun);
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
-				inputSkor(Q,jmlTim);
+				inputSkor(Q,jmlTim,1,2);
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}
@@ -48,6 +52,7 @@ void mainmenu(){
 				cekPemenang(Q, jmlTim, R, timPemenang);
 				break;
 				
+				
 			case 2:
 //				printf("Masukkan jumlah node : ");
 //				scanf("%d", &jmlNode);
@@ -55,7 +60,8 @@ void mainmenu(){
 				break;
 
 			case 3:
-				PrintTree(P, Q, R, jmlNode, treeString, namaTimArr);
+				PrintTree(P, Q, R, jmlNode, treeString, namaTimArr, timPemenang, tahun);
+//				writeTimPemenangToFile(P,"timPemenangKualifikasi.txt", treeString, timPemenang, jmlTim, tahun);
 //				saveData(P, Q, R, treeString, jmlNode);
 				break;
 
@@ -73,7 +79,7 @@ void mainmenu(){
 			case 5:
 				hitungDaun = 0;
 				cariDaun(P,1,indeksDaun, &hitungDaun);
-				inputSkorTree(P, Q, R, indeksDaun, &hitungDaun, treeString,timPemenangTree, namaTimArr);
+				inputSkorTree(P, Q, R, indeksDaun, &hitungDaun, treeString, timPemenang, timPemenangTree, namaTimArr, tahun);
 				
 //				tampilPemenangTree(P, indeksDaun, &hitungDaun,timPemenangTree);
 //				updateParent(P, indeksDaun, &hitungDaun,timPemenangTree);
@@ -96,10 +102,12 @@ void mainmenu(){
 		printf("\nKembali ke menu? Y/N");
 		ulang = getche();
 		system("cls");
+		tampilan();
 	}
 }
 
 int main(){
+	int tahun;
 	Isi_Tree P;
 	Isi_Team Q, R;
 	int pil, daun, i;

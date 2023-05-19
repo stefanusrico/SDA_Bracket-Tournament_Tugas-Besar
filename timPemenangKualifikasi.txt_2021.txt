@@ -1,0 +1,82 @@
+Tournament pada tahun : 2021
+Grup A
+Tim yang masuk ke babak Gugur:
+--------------------
+103
+102
+
+Grup B
+Tim yang masuk ke babak Gugur:
+--------------------
+107
+106
+
+Grup C
+Tim yang masuk ke babak Gugur:
+--------------------
+d
+c
+
+Grup D
+Tim yang masuk ke babak Gugur:
+--------------------
+h
+g
+
+Grup E
+Tim yang masuk ke babak Gugur:
+--------------------
+l
+k
+
+Grup F
+Tim yang masuk ke babak Gugur:
+--------------------
+p
+o
+
+Grup G
+Tim yang masuk ke babak Gugur:
+--------------------
+t
+s
+
+Grup H
+Tim yang masuk ke babak Gugur:
+--------------------
+x
+w
+
+Tree :
+             107
+         ?
+            d
+      ?
+            o
+         ?
+            103
+   ?
+            t
+         ?
+            p
+      ?
+            102
+         ?
+            l
+?
+            s
+         ?
+            h
+      ?
+            k
+         ?
+            g
+   ?
+            w
+         ?
+            106
+      ?
+            x
+         ?
+            c
+Pemenang Tounament 2021 adalah : ?

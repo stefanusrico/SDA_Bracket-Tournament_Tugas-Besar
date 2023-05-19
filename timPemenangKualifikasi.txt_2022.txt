@@ -1,0 +1,82 @@
+Tournament pada tahun : 2022
+Grup A
+Tim yang masuk ke babak Gugur:
+--------------------
+d
+c
+
+Grup B
+Tim yang masuk ke babak Gugur:
+--------------------
+h
+g
+
+Grup C
+Tim yang masuk ke babak Gugur:
+--------------------
+m
+l
+
+Grup D
+Tim yang masuk ke babak Gugur:
+--------------------
+q
+p
+
+Grup E
+Tim yang masuk ke babak Gugur:
+--------------------
+u
+t
+
+Grup F
+Tim yang masuk ke babak Gugur:
+--------------------
+y
+x
+
+Grup G
+Tim yang masuk ke babak Gugur:
+--------------------
+3
+2
+
+Grup H
+Tim yang masuk ke babak Gugur:
+--------------------
+7
+6
+
+Tree :
+             y
+         l
+            l
+      p
+            d
+         p
+            p
+   c
+            t
+         6
+            6
+      c
+            h
+         c
+            c
+m
+            x
+         q
+            q
+      2
+            g
+         2
+            2
+   m
+            7
+         3
+            3
+      m
+            u
+         m
+            m
+Pemenang Tounament 2022 adalah : m

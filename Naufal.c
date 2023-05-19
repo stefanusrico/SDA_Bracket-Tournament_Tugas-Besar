@@ -1,4 +1,5 @@
 #include "Naufal.h"
+#include "rico.h"
 
 void tandingGrup(Isi_Team Q, int Jml_Tim) { //Fungsi tandingGrup menerima masukan array Q yang berisi informasi tentang tim-tim yang akan berkompetisi dan jumlah tim Jml_Tim
 	int i, j, k; //Mendeklasikan variabel lokal i, j, dan k.
@@ -33,13 +34,8 @@ void sortHasil(Isi_Team Q, int Jml_Tim) { //Tujuan nya mengurutkan dan menampilk
 	int i,k;
 	for(k = 0; k < Jml_Tim/4; k++) {
 		printf("\nGrup %c\n", 'A' + k);
-<<<<<<< HEAD
 		printf("\nHasil akhir babak penyisihan:\n"); //Menampilkan output berupa string yang memberikan informasi bahwa ini adalah hasil akhir babak penyisihan
-		printf("Tim\t\tSkor\n"); //Menampilkan output berupa header tabel untuk nama tim dan skor.
-=======
-		printf("\nHasil akhir babak penyisihan:\n");
-		printf("Tim\t\tPoin\n");
->>>>>>> a27d6de90d905c86bbe466d51fd9e4e9ffe940c8
+		printf("Tim\t\tPoin\n");//Menampilkan output berupa header tabel untuk nama tim dan poin.
 		printf("--------------------\n");
 		for (i = 1 + k*4; i <= 4 + k*4; i++) {
 			printf("%s\t\t%d\n", Q[i].name, Q[i].score);	
@@ -47,7 +43,7 @@ void sortHasil(Isi_Team Q, int Jml_Tim) { //Tujuan nya mengurutkan dan menampilk
 	}
 }
 
-void getPemenang(Isi_Team Q, int Jml_Tim, char timPemenang[][500]){ //Tujuan modul di atas adalah untuk mendapatkan tim pemenang dari setiap grup berdasarkan posisi mereka setelah babak penyisihan. 
+void getPemenang(Isi_Tree P, Isi_Team R, Isi_Team Q, char* treeString, char namaTimArr[MAX_STRING_LENGTH], char timPemenang[][500], int Jml_Tim){ //Tujuan modul di atas adalah untuk mendapatkan tim pemenang dari setiap grup berdasarkan posisi mereka setelah babak penyisihan. 
 	int i,k;
 	int index = 0;
 	for(k = 0; k < Jml_Tim/4; k++) {
