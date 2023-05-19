@@ -1,0 +1,84 @@
+Tournament pada tahun : 2023
+Grup A
+Tim yang masuk ke babak Gugur:
+--------------------
+13
+12
+
+Grup B
+Tim yang masuk ke babak Gugur:
+--------------------
+17
+16
+
+Grup C
+Tim yang masuk ke babak Gugur:
+--------------------
+d
+c
+
+Grup D
+Tim yang masuk ke babak Gugur:
+--------------------
+h
+g
+
+Grup E
+Tim yang masuk ke babak Gugur:
+--------------------
+l
+k
+
+Grup F
+Tim yang masuk ke babak Gugur:
+--------------------
+p
+o
+
+Grup G
+Tim yang masuk ke babak Gugur:
+--------------------
+t
+
+
+
+Grup H
+Tim yang masuk ke babak Gugur:
+--------------------
+x
+w
+
+Tree :
+             12
+         17
+            17
+      o
+            
+
+         o
+            o
+   d
+            c
+         w
+            w
+      d
+            k
+         d
+            d
+g
+            16
+         l
+            l
+      h
+            x
+         h
+            h
+   g
+            t
+         p
+            p
+      g
+            13
+         g
+            g
+Pemenang Tounament 2023 adalah : g
