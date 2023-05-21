@@ -2,7 +2,6 @@
 #include "najwan.h"
 #include "naufal.h"
 #include "head.h"
-//#include <ctype.h>
 
 
 //menggunakan ASCII GENERATOR, web :https://ascii-generator.site/t/

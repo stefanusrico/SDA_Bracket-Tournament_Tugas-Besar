@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <math.h>
 #include <string.h>
+#include <ctype.h>
 
 #define jml_maks 100
 #define NIL 0

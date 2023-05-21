@@ -5,7 +5,7 @@
 
 void mainmenu(){
 	int tahun;
-	printf("Input tournament tahun : ");
+	printf("Input tahun tournament : ");
 	scanf("%d", &tahun);
 	system("cls");
 	tampilan();
@@ -13,7 +13,7 @@ void mainmenu(){
 	Isi_Team Q, R;
 	int pil, daun, i;
 	int jmlNode = 31;
-	int  jmlTim = 4;
+	int  jmlTim = 32;
 	infotype nilai;
 	int indeksDaun[1000];
 	int hitungDaun = 0;
@@ -44,7 +44,7 @@ void mainmenu(){
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}
-				
+				system("cls");
 				swapScore(R,jmlTim);
 				sortByScore(R,jmlTim);
 				swapHasil(Q,jmlTim);
