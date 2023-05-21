@@ -2,24 +2,27 @@
 #include "najwan.h"
 #include "naufal.h"
 #include "head.h"
+//#include <ctype.h>
 
 
-
+//menggunakan ASCII GENERATOR, web :https://ascii-generator.site/t/
 void tampilan() {
-	printf("\t\t\t\t  _______  ___   _______  ___      _______    ______   __   __  __    _  ___   _______  \n");
-	printf("\t\t\t\t |       ||   | |   _   ||   |    |   _   |  |      | |  | |  ||  |  | ||   | |   _   | \n");
-	printf("\t\t\t\t |    _  ||   | |  |_|  ||   |    |  |_|  |  |  _    ||  | |  ||   |_| ||   | |  |_|  | \n");
-	printf("\t\t\t\t |   |_| ||   | |       ||   |    |       |  | | |   ||  |_|  ||       ||   | |       | \n");
-	printf("\t\t\t\t |    ___||   | |       ||   |___ |       |  | |_|   ||       ||  _    ||   | |       | \n");
-	printf("\t\t\t\t |   |    |   | |   _   ||       ||   _   |  |       ||       || | |   ||   | |   _   | \n");
-	printf("\t\t\t\t |___|    |___| |__| |__||_______||__| |__|  |______| |_______||_|  |__||___| |__| |__| \n");
-	printf("\n\n\n");
-	printf("\t\t\t\t                      _____      ____      __       ____     \n");
-	printf("\t\t\t\t                     / ___ `.  .'    '.   /  |    .' __ '.   \n");
-	printf("\t\t\t\t                    |_/___) | |  .--.  |  `| |    | (__) |   \n");
-	printf("\t\t\t\t                     .'____.' | |    | |   | |    .`____'.   \n");
-	printf("\t\t\t\t                    / /_____  |  `--'  |  _| |_  | (____) |  \n");
-	printf("\t\t\t\t                    |_______|  '.____.'  |_____| `.______.'  \n\n\n");
+	puts("\t\t\t\t 88888888888  .d88888b.  888     888 8888888b.  888b    888        d8888 888b     d888 8888888888 888b    888 88888888888");
+	puts("\t\t\t\t     888     888     888 888     888 888    888 88888b  888      d88P888 88888b.d88888 888        88888b  888     888    ");
+	puts("\t\t\t\t     888     888     888 888     888 888    d88P888Y88b 888     d88P 888 888Y88888P888 8888888    888Y88b 888     888    ");
+	puts("\t\t\t\t     888     888     888 888     888 888   d88P 888Y88b 888     d88P 888 888Y88888P888 8888888    888Y88b 888     888    ");
+	puts("\t\t\t\t     888     888     888 888     888 8888888P   888 Y88b888    d88P  888 888 Y888P 888 888        888 Y88b888     888    ");
+	puts("\t\t\t\t     888     888     888 888     888 888 T88b   888  Y88888   d88P   888 888  Y8P  888 888        888  Y88888     888    ");
+	puts("\t\t\t\t     888     Y88b. .d88P Y88b. .d88P 888  T88b  888   Y8888  d8888888888 888       888 888        888   Y8888     888    ");
+	puts("\t\t\t\t     888       Y88888P     Y88888P   888   T88b 888    Y888 d88P     888 888       888 8888888888 888    Y888     888    \n\n");
+	puts("\t\t\t\t\t\t 888888b.   8888888b.         d8888  .d8888b.  888    d8P  8888888888 88888888888 ");
+	puts("\t\t\t\t\t\t 888   88b  888   Y88b       d88888 d88P  Y88b 888   d8P   888            888     ");
+	puts("\t\t\t\t\t\t 888  .88P  888    888      d88P888 888    888 888  d8P    888            888     ");
+	puts("\t\t\t\t\t\t 8888888K.  888   d88P     d88P 888 888        888d88K     8888888        888     ");
+	puts("\t\t\t\t\t\t 888    888 888 T88b     d88P   888 888    888 888  Y88b   888            888     ");
+	puts("\t\t\t\t\t\t 888   d88P 888  T88b   d8888888888 Y88b  d88P 888   Y88b  888            888     ");
+	puts("\t\t\t\t\t\t 8888888P   888   T88b d88P     888   Y8888P   888    Y88b 8888888888     888     ");
+	puts("\t\t\t\t============================================================================================================================\n\n");
 }
 
 
@@ -72,37 +75,38 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 		k = 3 + x*4;
 		l = 4 + x*4;
 
-		if(Q[i].score == Q[j].score && Q[i].score == Q[k].score && Q[i].score == Q[l].score && Q[j].score == Q[l].score && Q[j].score == Q[k].score && Q[k].score == Q[l].score ) {
+		//untuk kondisi : 1 1 1 1
+		if((Q[i].score == Q[j].score) && (Q[i].score == Q[k].score) && (Q[i].score == Q[l].score) && (Q[j].score == Q[l].score) && (Q[j].score == Q[k].score) && (Q[k].score == Q[l].score) ) {
 			printf("%s\n", Q[i].name);
 			printf("%s", Q[i+1].name);
 			strcpy(timPemenang[index],Q[i].name);
 			index++;
 			strcpy(timPemenang[index],Q[i+1].name);
 			index++;
-		} else if(Q[i].score == Q[j].score == Q[k].score && Q[k].score != Q[l].score) {
-			
+		} /*untuk kondisi : 1 1 1 0*/else if((Q[i].score == Q[j].score == Q[k].score) && (Q[k].score != Q[l].score)) {
+
 			printf("%s\n", R[i].name);
 			printf("%s\n", R[i+1].name);
 			strcpy(timPemenang[index],R[i].name);
 			index++;
 			strcpy(timPemenang[index],R[i+1].name);
 			index++;
-				
-		} else if(Q[j].score == Q[k].score && Q[k].score == Q[l].score && Q[i].score!= Q[j].score && Q[i].score!= Q[k].score && Q[i].score!= Q[l].score ) {
+
+		} /*untuk kondisi : 2 1 1 1 */else if((Q[j].score == Q[k].score) && (Q[k].score == Q[l].score) && (Q[i].score!= Q[j].score) && (Q[i].score!= Q[k].score) && (Q[i].score!= Q[l].score) ) {
 			printf("%s\n", Q[i].name);
 			printf("%s", Q[i+1].name);
 			strcpy(timPemenang[index],Q[i].name);
 			index++;
 			strcpy(timPemenang[index],Q[i+1].name);
 			index++;
-		} else if(Q[i].score!= Q[j].score && Q[i].score!= Q[k].score && Q[i].score!= Q[l].score && Q[j].score!= Q[k].score && Q[j].score!= Q[l].score && Q[l].score!= Q[k].score || Q[l].score== Q[k].score){
+		} /*untuk kondisi : 4 3 2 1*/else if(Q[i].score != Q[j].score && Q[i].score!= Q[k].score && Q[i].score!= Q[l].score && Q[j].score!= Q[k].score && Q[j].score!= Q[l].score && Q[l].score!= Q[k].score || Q[l].score== Q[k].score) {
 			printf("%s\n", Q[i].name);
 			printf("%s", Q[i+1].name);
 			strcpy(timPemenang[index],Q[i].name);
 			index++;
 			strcpy(timPemenang[index],Q[i+1].name);
 			index++;
-		} else if(Q[i].score == Q[j].score){
+		} /*untuk kondisi : */   else  {
 			printf("%s\n", Q[i].name);
 			printf("%s", Q[i+1].name);
 			strcpy(timPemenang[index],Q[i].name);
@@ -116,39 +120,68 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 }
 
 
-void inputSkor(Isi_Team Q, int Jml_Tim, int scoreI, int scoreJ) {
+void inputSkor(Isi_Team Q, int Jml_Tim) {
 	int i, j, k;
-//	int scoreI, scoreJ;
+	char scoreI, scoreJ;
 	char namaGrup = 'A';
 	for(k = 0; k < Jml_Tim/4; k++) {
 		system("cls");
 		printf("Grup %c\n", namaGrup + k);
 		for(i = 1 + k*4; i <= 4 + k*4; i++) {
 			for(j = i+1; j <= 4 + k*4; j++) {
-//				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
-//				scanf("%d-%d", &scoreI, &scoreJ);
+				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
+				scanf("%c-%c",&scoreI,&scoreJ);
+				getchar();
+			
+				if((scoreI == 'o' && scoreJ == '-') || (scoreI == '-' && scoreJ == 'o')) {
+					if(scoreI == 'o' && scoreJ == '-') {
+						Q[i].score = Q[i].score + 3;
+						scoreI = '3';
+						scoreJ = '0';
+						score[i] = (scoreI - '0') + score[i];
+						score[j] = (scoreJ - '0') + score[j];
+						
+					} else {
+						Q[j].score = Q[j].score + 3;
+						scoreI = '0';
+						scoreJ = '3';
+						score[i] = (scoreI - '0') + score[i];
+						score[j] = (scoreJ - '0') + score[j];
+						
+					}
+				} else if(isdigit(scoreJ) && isdigit(scoreI)) {
 
-				score[i] = scoreI + score[i];
-				score[j] = scoreJ + score[j];
+					scoreI = scoreI - '0';
+					scoreJ = scoreJ - '0';
+					
+					score[i] = scoreI + score[i];
+					score[j] = scoreJ + score[j];
 
-				if(scoreI < 0 || scoreJ < 0) {
-					printf("Invalid input");
+					if(scoreI > scoreJ) {
+						Q[i].score = Q[i].score + 3;
+						
+					} else if(scoreJ > scoreI) {
+						Q[j].score = Q[j].score + 3;
+						
+					} else {
+						Q[i].score = Q[i].score + 1;
+						Q[j].score = Q[j].score + 1;
+						
+					}
+
+				} else {
+					printf("Invalid input\n");
 					j--;
 					continue;
 				}
-				if(scoreI > scoreJ) {
-					Q[i].score = Q[i].score + 3;
-				} else if(scoreJ > scoreI) {
-					Q[j].score = Q[j].score + 3;
-				} else {
-					Q[i].score = Q[i].score + 1;
-					Q[j].score = Q[j].score + 1;
-				}
-
 			}
 		}
 	}
 }
+
+
+
+
 
 void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]) {
 	int scoreI,scoreJ;
@@ -181,6 +214,13 @@ void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]) {
 	}
 }
 
-
-
+//int isAngka(char p) {
+//	if (p[100] >= '0' && p[100] <= '100') {
+////		|| scoreJ >= '0' && scoreJ <= '2147483647' || scoreI == 'o' && scoreJ == '-' ||scoreI == '-' && scoreJ == 'o'
+//		return 1;  // pernyataannya benar, dikirim 0 karena yang dikembalikan tuh kebalikannya
+//	} else {
+//		return 0;  // Karakter bukan angka
+//	}
+//}
+//
 

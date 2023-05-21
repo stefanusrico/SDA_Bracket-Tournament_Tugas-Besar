@@ -13,7 +13,7 @@ void mainmenu(){
 	Isi_Team Q, R;
 	int pil, daun, i;
 	int jmlNode = 31;
-	int  jmlTim = 32;
+	int  jmlTim = 4;
 	infotype nilai;
 	int indeksDaun[1000];
 	int hitungDaun = 0;
@@ -24,13 +24,13 @@ void mainmenu(){
 	char timPemenang[200][500];
 	char timPemenangTree[200][500];
 	while (ulang == 'y'|| ulang == 'Y') {	
-		printf("\t\t\t\t\t\t\t          1. Buat Tim\n");
-		printf("\t\t\t\t\t\t\t         2. Create Tree\n");
-		printf("\t\t\t\t\t\t\t         3. Print Tree\n");
-		printf("\t\t\t\t\t\t\t           4. Assign\n");
-		printf("\t\t\t\t\t\t\t         5. Update Tree\n");
-		printf("\t\t\t\t\t\t\t         6. Indeks daun\n\n");
-		printf("\t\t\t\t\t\t\t      Masukkan pilihan anda : ");
+		printf("\t\t\t\t\t\t\t\t\t          1. Buat Tim\n");
+		printf("\t\t\t\t\t\t\t\t\t         2. Create Tree\n");
+		printf("\t\t\t\t\t\t\t\t\t         3. Print Tree\n");
+		printf("\t\t\t\t\t\t\t\t\t           4. Assign\n");
+		printf("\t\t\t\t\t\t\t\t\t         5. Update Tree\n");
+		printf("\t\t\t\t\t\t\t\t\t         6. Indeks daun\n\n");
+		printf("\t\t\t\t\t\t\t\t\t      Masukkan pilihan anda : ");
 		scanf("%d", &pil);
 		switch(pil) {
 			case 1:
@@ -40,7 +40,7 @@ void mainmenu(){
 				tandingGrup(Q,jmlTim);
 				system("pause");
 				system("cls");
-				inputSkor(Q,jmlTim,1,2);
+				inputSkor(Q,jmlTim);
 				for(int i = 1; i <= jmlTim; i++){
 					R[i] = Q[i];	
 				}
