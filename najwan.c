@@ -156,6 +156,7 @@ void inputSkor(Isi_Team Q, int Jml_Tim) {
 
 					}
 					
+					
 				} else if((num1 >=0 && num1 <= 100) && (num2 >=0 && num2 <= 100) && (!tanpaHuruf(scoreI)&&!tanpaHuruf(scoreJ)) && strcmp(scoreI, "-") && strcmp(scoreJ, "-")) {
 					printf("masuk3\n");
 					score[i] = num1 + score[i];
