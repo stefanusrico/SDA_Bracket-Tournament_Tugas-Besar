@@ -14,5 +14,6 @@ void inputSkor(Isi_Team Q, int Jml_Tim);
 
 void aduPenalti(Isi_Tree P,int i,int index,char timPemenangTree[][500]);
 
-//int isAngka(char p);
+int tanpaHuruf(char* str);
+
 #endif

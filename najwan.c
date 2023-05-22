@@ -121,7 +121,7 @@ void cekPemenang(Isi_Team Q, int Jml_Tim, Isi_Team R, char timPemenang[][500]) {
 
 void inputSkor(Isi_Team Q, int Jml_Tim) {
 	int i, j, k;
-	char scoreI, scoreJ;
+	char scoreI[jml_maks+1], scoreJ[jml_maks+1];
 	char namaGrup = 'A';
 	for(k = 0; k < Jml_Tim/4; k++) {
 		system("cls");
@@ -130,43 +130,47 @@ void inputSkor(Isi_Team Q, int Jml_Tim) {
 		for(i = 1 + k*4; i <= 4 + k*4; i++) {
 			for(j = i+1; j <= 4 + k*4; j++) {
 				printf("Masukkan skor %s vs %s : ", Q[i].name, Q[j].name);
-				scanf("%c-%c",&scoreI,&scoreJ);
-				getchar();
-			
-				if((scoreI == 'o' && scoreJ == '-') || (scoreI == '-' && scoreJ == 'o')) {
-					if(scoreI == 'o' && scoreJ == '-') {
+				fflush(stdin);
+				scanf("%s %s",&scoreI,&scoreJ);
+
+
+				printf("%s %s\n", scoreJ, scoreI);
+				int num1, num2;
+				num1 = atoi(scoreI);
+				num2 = atoi(scoreJ);
+				printf("%d %d\n", num1, num2);
+
+
+				if((!strcmp(scoreI, "o") && !strcmp(scoreJ, "-")) || (!strcmp(scoreI, "-") && !strcmp(scoreJ, "o"))) {
+					if(!strcmp(scoreI, "o") && !strcmp(scoreJ, "-")) {
 						Q[i].score = Q[i].score + 3;
-						scoreI = '3';
-						scoreJ = '0';
-						score[i] = (scoreI - '0') + score[i];
-						score[j] = (scoreJ - '0') + score[j];
-						
+						printf("masuk\n");
+						score[i] = 3 + score[i];
+						score[j] = 0 + score[j];
+
 					} else {
 						Q[j].score = Q[j].score + 3;
-						scoreI = '0';
-						scoreJ = '3';
-						score[i] = (scoreI - '0') + score[i];
-						score[j] = (scoreJ - '0') + score[j];
-						
+						printf("masuk2\n");
+						score[i] = 0 + score[i];
+						score[j] = 3 + score[j];
+
 					}
-				} else if(isdigit(scoreJ) && isdigit(scoreI)) {
-
-					scoreI = scoreI - '0';
-					scoreJ = scoreJ - '0';
 					
-					score[i] = scoreI + score[i];
-					score[j] = scoreJ + score[j];
+				} else if((num1 >=0 && num1 <= 100) && (num2 >=0 && num2 <= 100) && (!tanpaHuruf(scoreI)&&!tanpaHuruf(scoreJ)) && strcmp(scoreI, "-") && strcmp(scoreJ, "-")) {
+					printf("masuk3\n");
+					score[i] = num1 + score[i];
+					score[j] = num2 + score[j];
 
-					if(scoreI > scoreJ) {
+					if(num1 > num2) {
 						Q[i].score = Q[i].score + 3;
-						
-					} else if(scoreJ > scoreI) {
+
+					} else if(num2 > num1) {
 						Q[j].score = Q[j].score + 3;
-						
+
 					} else {
 						Q[i].score = Q[i].score + 1;
 						Q[j].score = Q[j].score + 1;
-						
+
 					}
 
 				} else {
@@ -178,7 +182,6 @@ void inputSkor(Isi_Team Q, int Jml_Tim) {
 		}
 	}
 }
-
 
 
 
@@ -223,4 +226,14 @@ void aduPenalti(Isi_Tree P, int i, int index, char timPemenangTree[][500]) {
 //	}
 //}
 //
+int tanpaHuruf(char* str) {
+    int len = strlen(str);
 
+    for (int i = 0; i < len; i++) {
+        if (isalpha(str[i])) {
+            return 1; // Mengandung huruf
+        }
+    }
+
+    return 0; // Tidak mengandung huruf
+}

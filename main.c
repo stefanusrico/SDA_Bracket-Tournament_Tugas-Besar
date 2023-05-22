@@ -13,7 +13,7 @@ void mainmenu(){
 	Isi_Team Q, R;
 	int pil, daun, i;
 	int jmlNode = 31;
-	int  jmlTim = 32;
+	int  jmlTim = 4;
 	infotype nilai;
 	int indeksDaun[1000];
 	int hitungDaun = 0;
