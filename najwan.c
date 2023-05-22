@@ -125,6 +125,7 @@ void inputSkor(Isi_Team Q, int Jml_Tim) {
 	char namaGrup = 'A';
 	for(k = 0; k < Jml_Tim/4; k++) {
 		system("cls");
+		printf("\t\t*cara penulisannya 'skor-skor'\n\t\t*jika tim tidak hadir, maka diberi tanda '-' dan yang hadir 'o'\n");
 		printf("Grup %c\n", namaGrup + k);
 		for(i = 1 + k*4; i <= 4 + k*4; i++) {
 			for(j = i+1; j <= 4 + k*4; j++) {
